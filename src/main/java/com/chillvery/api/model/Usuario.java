@@ -1,7 +1,6 @@
 package com.chillvery.api.model;
 
-import com.chillvery.api.funcionario.DadosAtualizaFuncionario;
-import com.chillvery.api.funcionario.DadosCadastroFuncionario;
+import com.chillvery.api.cliente.DadosCadastroCliente;
 import com.chillvery.api.usuario.DadosAtualizaUsuario;
 import com.chillvery.api.usuario.DadosCadastroUsuario;
 import jakarta.persistence.*;
@@ -49,6 +48,15 @@ public class Usuario {
         this.setAtivo(true);
     }
 
+    public Usuario(DadosCadastroCliente dadosCadastroCliente) {
+        this.setNome(dadosCadastroCliente.nome());
+        this.setLogin(dadosCadastroCliente.login());
+        this.setSenha(dadosCadastroCliente.senha());
+        this.setEmail(dadosCadastroCliente.email());
+        this.setTelefone(dadosCadastroCliente.telefone());
+        this.setAtivo(true);
+    }
+
     public void remover() {
         this.setAtivo(false);
     }
@@ -64,6 +72,10 @@ public class Usuario {
 
         if (dadosAtualizaUsuario.email() != null) {
             this.setEmail(dadosAtualizaUsuario.email());
+        }
+
+        if (dadosAtualizaUsuario.telefone() != null) {
+            this.setTelefone(dadosAtualizaUsuario.telefone());
         }
     }
 }

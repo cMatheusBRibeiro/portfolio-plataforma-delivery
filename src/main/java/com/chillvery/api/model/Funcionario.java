@@ -6,10 +6,7 @@ import com.chillvery.api.funcionario.Tipo;
 import com.chillvery.api.usuario.DadosAtualizaUsuario;
 import com.chillvery.api.usuario.DadosCadastroUsuario;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Table(name = "funcionario")
 @Entity(name = "Funcionario")

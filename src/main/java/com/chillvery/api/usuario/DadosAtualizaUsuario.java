@@ -1,7 +1,7 @@
 package com.chillvery.api.usuario;
 
+import com.chillvery.api.cliente.DadosAtualizaCliente;
 import com.chillvery.api.funcionario.DadosAtualizaFuncionario;
-import jakarta.validation.constraints.Pattern;
 
 public record DadosAtualizaUsuario(
 
@@ -23,4 +23,12 @@ public record DadosAtualizaUsuario(
         );
     }
 
+    public DadosAtualizaUsuario(DadosAtualizaCliente dadosAtualizaCliente) {
+        this(
+            dadosAtualizaCliente.nome(),
+            dadosAtualizaCliente.login(),
+            dadosAtualizaCliente.email(),
+            dadosAtualizaCliente.telefone()
+        );
+    }
 }
