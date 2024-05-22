@@ -36,29 +36,33 @@ public class Empresa {
     private Boolean ativo;
 
     public Empresa(DadosCadastroEmpresa dadosCadastroEmpresa) {
-        this.razaoSocial = dadosCadastroEmpresa.razaoSocial();
-        this.nomeFantasia = dadosCadastroEmpresa.nomeFantasia();
-        this.cnpj = dadosCadastroEmpresa.cnpj();
-        this.endereco = new Endereco(dadosCadastroEmpresa.endereco());
-        this.ativo = true;
+        this.setRazaoSocial(dadosCadastroEmpresa.razaoSocial());
+        this.setNomeFantasia(dadosCadastroEmpresa.nomeFantasia());
+        this.setCnpj(dadosCadastroEmpresa.cnpj());
+        this.setEndereco(new Endereco(dadosCadastroEmpresa.endereco()));
+        this.setAtivo(true);
     }
 
     public void atualizarInformacoes(DadosAtualizarEmpresa dadosAtualizarEmpresa) {
         if (dadosAtualizarEmpresa.razaoSocial() != null) {
-            this.razaoSocial = dadosAtualizarEmpresa.razaoSocial();
+            this.setRazaoSocial(dadosAtualizarEmpresa.razaoSocial());
         }
+
         if (dadosAtualizarEmpresa.nomeFantasia() != null) {
-            this.nomeFantasia = dadosAtualizarEmpresa.nomeFantasia();
+            this.setNomeFantasia(dadosAtualizarEmpresa.nomeFantasia());
         }
+
         if (dadosAtualizarEmpresa.cnpj() != null) {
-            this.cnpj = dadosAtualizarEmpresa.cnpj();
+            this.setCnpj(dadosAtualizarEmpresa.cnpj());
         }
+
         if (dadosAtualizarEmpresa.endereco() != null) {
-            this.endereco.atualizarEndereco(dadosAtualizarEmpresa.endereco());
+            this.getEndereco().atualizarEndereco(dadosAtualizarEmpresa.endereco());
         }
     }
 
     public void remover() {
-        this.ativo = false;
+        this.setAtivo(false);
     }
+
 }

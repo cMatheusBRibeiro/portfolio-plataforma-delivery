@@ -37,36 +37,42 @@ public class Endereco {
     private String complemento;
 
     public Endereco(DadosEndereco dadosEndereco) {
-        this.cep = dadosEndereco.cep();
-        this.logradouro = dadosEndereco.logradouro();
-        this.bairro = dadosEndereco.bairro();
-        this.cidade = dadosEndereco.cidade();
-        this.uf = dadosEndereco.uf();
-        this.numero = dadosEndereco.numero();
-        this.complemento = dadosEndereco.complemento();
+        this.setCep(dadosEndereco.cep());
+        this.setLogradouro(dadosEndereco.logradouro());
+        this.setBairro(dadosEndereco.bairro());
+        this.setCidade(dadosEndereco.cidade());
+        this.setUf(dadosEndereco.uf());
+        this.setNumero(dadosEndereco.numero());
+        this.setComplemento(dadosEndereco.complemento());
     }
 
     public void atualizarEndereco(DadosEndereco dadosEndereco) {
         if (dadosEndereco.cep() != null) {
-            this.cep = dadosEndereco.cep();
+            this.setCep(dadosEndereco.cep());
         }
+        
         if (dadosEndereco.logradouro() != null) {
-            this.logradouro = dadosEndereco.logradouro();
+            this.setLogradouro(dadosEndereco.logradouro());
         }
+        
         if (dadosEndereco.bairro() != null) {
-            this.bairro = dadosEndereco.bairro();
+            this.setBairro(dadosEndereco.bairro());
         }
+        
         if (dadosEndereco.cidade() != null) {
-            this.cidade = dadosEndereco.cidade();
+            this.setCidade(dadosEndereco.cidade());
         }
+        
         if (dadosEndereco.uf() != null) {
-            this.uf = dadosEndereco.uf();
+            this.setUf(dadosEndereco.uf());
         }
+        
         if (dadosEndereco.numero() != null) {
-            this.numero = dadosEndereco.numero();
+            this.setNumero(dadosEndereco.numero());
         }
+        
         if (dadosEndereco.complemento() != null) {
-            this.complemento = dadosEndereco.complemento();
+            this.setComplemento(dadosEndereco.complemento());
         }
     }
 }
