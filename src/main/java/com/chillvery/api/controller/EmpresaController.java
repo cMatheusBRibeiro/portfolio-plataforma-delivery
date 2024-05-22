@@ -6,6 +6,8 @@ import com.chillvery.api.empresa.DadosListagemEmpresa;
 import com.chillvery.api.model.Empresa;
 import com.chillvery.api.repository.EmpresaRepository;
 import jakarta.transaction.Transactional;
+import jakarta.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -30,13 +32,13 @@ public class EmpresaController {
 
     @PostMapping
     @Transactional
-    public void adicionarEmpresa(@RequestBody DadosCadastroEmpresa dadosCadastroEmpresa) {
+    public void adicionarEmpresa(@RequestBody @Valid DadosCadastroEmpresa dadosCadastroEmpresa) {
         this.repository.save(new Empresa(dadosCadastroEmpresa));
     }
 
     @PutMapping
     @Transactional
-    public void atualizaEmpresa(@RequestBody DadosAtualizarEmpresa dadosAtualizarEmpresa) {
+    public void atualizaEmpresa(@RequestBody @Valid DadosAtualizarEmpresa dadosAtualizarEmpresa) {
         var empresa = this.repository.getReferenceById(dadosAtualizarEmpresa.id());
         empresa.atualizarInformacoes(dadosAtualizarEmpresa);
     }
