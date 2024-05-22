@@ -13,7 +13,7 @@ public record DadosCadastroEmpresa(
         String nomeFantasia,
 
         @NotBlank
-        @Pattern(regexp = "\\d{2}\\.?\\d{3}\\.?\\d{3}\\/?\\d{4}\\-")
+        @Pattern(regexp = "\\d{2}\\.?\\d{3}\\.?\\d{3}\\/?\\d{4}\\-?\\d{2}")
         String cnpj,
 
         @Embedded
