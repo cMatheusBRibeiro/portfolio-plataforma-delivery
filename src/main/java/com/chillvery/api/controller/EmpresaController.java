@@ -36,10 +36,13 @@ public class EmpresaController {
         this.repository.save(new Empresa(dadosCadastroEmpresa));
     }
 
-    @PutMapping
+    @PutMapping("/{id}")
     @Transactional
-    public void atualizaEmpresa(@RequestBody @Valid DadosAtualizarEmpresa dadosAtualizarEmpresa) {
-        var empresa = this.repository.getReferenceById(dadosAtualizarEmpresa.id());
+    public void atualizaEmpresa(
+        @RequestBody @Valid DadosAtualizarEmpresa dadosAtualizarEmpresa,
+        @PathVariable Long id
+    ) {
+        var empresa = this.repository.getReferenceById(id);
         empresa.atualizarInformacoes(dadosAtualizarEmpresa);
     }
 
