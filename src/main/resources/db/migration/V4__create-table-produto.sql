@@ -1,0 +1,8 @@
+CREATE TABLE produto (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL,
+    preco FLOAT(6, 2) NOT NULL,
+    ativo TINYINT(1) NOT NULL,
+    CONSTRAINT pk_produto_id
+        PRIMARY KEY (id)
+)ENGINE=INNODB;
